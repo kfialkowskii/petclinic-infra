@@ -11,7 +11,7 @@ source "$(dirname "$0")/../.env"
 set +a
  
 RG="rg-${PROJECT_NAME}-tfstate"
-SA="st${PROJECT_NAME}tfstate"
+SA="st${PROJECT_NAME}tfstate21291" # Nazwa musi być niepowtarzalna
  
 az account set --subscription "$AZURE_SUBSCRIPTION_ID"
  
