@@ -1,0 +1,13 @@
+###############################################################################
+# terraform.tfvars.example — skopiuj do terraform.tfvars i uzupełnij
+# terraform.tfvars jest w .gitignore
+###############################################################################
+
+location             = "polandcentral"
+project              = "petclinic"
+vm_size              = "Standard_B2s"
+vm_admin_username    = "azureuser"
+vm_ssh_public_key    = "ssh-ed25519 AAAA..."    # klucz publiczny ssh do VM
+mysql_admin_username = "petclinic"
+mysql_admin_password = ""                        # to samo co w .env
+allowed_ssh_cidr     = ""                        # `curl -s ifconfig.me -4` - wynik/32
