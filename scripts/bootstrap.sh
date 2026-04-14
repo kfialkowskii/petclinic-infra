@@ -31,7 +31,7 @@ az storage container create \
 SSH_KEY="$HOME/.ssh/${PROJECT_NAME}"
 if [[ ! -f "$SSH_KEY" ]]; then
   echo ">>> Generuję klucz SSH: ${SSH_KEY}"
-  ssh-keygen -t ed25519 -f "$SSH_KEY" -N "" -C "${PROJECT_NAME}-deploy"
+  ssh-keygen -t rsa -b 4096 -f "$SSH_KEY" -N "" -C "${PROJECT_NAME}-deploy"
 else
   echo ">>> Klucz SSH już istnieje: ${SSH_KEY}"
 fi

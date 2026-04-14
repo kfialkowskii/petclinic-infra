@@ -16,7 +16,7 @@ terraform {
   # (Storage Account stworzony przez bootstrap.sh)
   backend "azurerm" {
     resource_group_name  = "rg-petclinic-tfstate"
-    storage_account_name = "stpetclinictfstate"
+    storage_account_name = "stpetclinictfstate21291"
     container_name       = "tfstate"
     key                  = "petclinic.tfstate"
   }

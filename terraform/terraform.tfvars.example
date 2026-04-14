@@ -1,6 +1,6 @@
 ###############################################################################
-# terraform.tfvars.example — skopiuj do terraform.tfvars i uzupełnij
-# terraform.tfvars jest w .gitignore
+# terraform.tfvars.example - dodać do terraform.tfvars i uzupełnić
+# terraform.tfvars do .gitignore
 ###############################################################################
 
 location             = "polandcentral"

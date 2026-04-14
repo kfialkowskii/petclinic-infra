@@ -16,7 +16,7 @@ variable "project" {
 
 variable "vm_size" {
   type    = string
-  default = "Standard_B2s" # 2 vCPU, 4 GB RAM
+  default = "Standard_B2s_v2" # 2 vCPU, 4 GB RAM
 }
 
 variable "vm_admin_username" {
