@@ -20,7 +20,7 @@ resource "azurerm_network_security_group" "app" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = var.allowed_ssh_cidr
+    source_address_prefixes      = var.allowed_ssh_cidr
     destination_address_prefix = "*"
   }
 

@@ -1,0 +1,25 @@
+---
+# Instaluje Docker i Azure CLI na VM
+ 
+- name: Setup VM
+  hosts: app
+  become: true
+ 
+  tasks:
+    - name: Zainstaluj Docker
+      ansible.builtin.shell: |
+        curl -fsSL https://get.docker.com | sh
+      args:
+        creates: /usr/bin/docker
+ 
+    - name: Dodaj usera do grupy docker
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+ 
+    - name: Zainstaluj Azure CLI
+      ansible.builtin.shell: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+      args:
+        creates: /usr/bin/az

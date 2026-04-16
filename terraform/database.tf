@@ -1,11 +1,11 @@
 ###############################################################################
-# database.tf — Azure Database for MySQL Flexible Server
+# database.tf - Azure Database for MySQL Flexible Server
 #
-# Baza w prywatnym subnecie (snet-db) — brak publicznego dostępu.
+# Baza w prywatnym subnecie (snet-db) - brak publicznego dostępu.
 # Komunikacja z VM odbywa się przez VNet + Private DNS Zone.
 ###############################################################################
 
-# DNS — żeby VM mogła znaleźć bazę po nazwie (FQDN) wewnątrz VNetu
+# DNS - żeby VM mogła znaleźć bazę po nazwie (FQDN) wewnątrz VNetu
 resource "azurerm_private_dns_zone" "mysql" {
   name                = "${var.project}.mysql.database.azure.com"
   resource_group_name = azurerm_resource_group.main.name
@@ -25,9 +25,9 @@ resource "azurerm_mysql_flexible_server" "main" {
   resource_group_name    = azurerm_resource_group.main.name
   administrator_login    = var.mysql_admin_username
   administrator_password = var.mysql_admin_password
-  sku_name               = "B_Standard_B1s" # najtańszy tier
+  sku_name               = "B_Standard_B1ms" # najtańszy tier
   version                = "8.0.21"
-  zone                   = "1"
+  zone                   = "3"
 
   # Prywatny dostęp — baza siedzi w snet-db, niedostępna z internetu
   delegated_subnet_id = azurerm_subnet.db.id

@@ -9,7 +9,7 @@ variable "location" {
 
 variable "project" {
   type    = string
-  default = "petclinic"
+  default = "petclinic" 
 }
 
 # --- VM ---
@@ -29,7 +29,7 @@ variable "vm_ssh_public_key" {
 }
 
 variable "allowed_ssh_cidr" {
-  type        = string
+  type        = list(string)
   description = "Twoje publiczne IP w formacie x.x.x.x/32"
 }
 

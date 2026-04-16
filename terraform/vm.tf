@@ -6,8 +6,8 @@
 # bez przechowywania jakichkolwiek credentials.
 ###############################################################################
 
-resource "azurerm_public_ip" "app" {
-  name                = "pip-${var.project}"
+resource "azurerm_public_ip" "vm" {
+  name                = "pip-vm-${var.project}"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   allocation_method   = "Static"
@@ -23,7 +23,7 @@ resource "azurerm_network_interface" "app" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.app.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.app.id
+    public_ip_address_id          = azurerm_public_ip.vm.id
   }
 }
 

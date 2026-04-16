@@ -17,6 +17,7 @@ tfplan
  
 # Ansible
 *.retry
+*hosts.ini
  
 # SSH
 *.pem

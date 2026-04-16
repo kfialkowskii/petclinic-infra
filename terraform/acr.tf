@@ -8,7 +8,7 @@
 ###############################################################################
 
 resource "azurerm_container_registry" "main" {
-  name                = "acr${var.project}"
+  name                = "acr${var.project}21291"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   sku                 = "Basic"
