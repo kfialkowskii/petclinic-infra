@@ -9,7 +9,7 @@ variable "location" {
 
 variable "project" {
   type    = string
-  default = "petclinic" 
+  default = "petclinic"
 }
 
 # --- VM ---
